@@ -1,0 +1,79 @@
+<html style="background-color: 1b1c1e;">
+  <style>
+    .div {
+      width: 400px;
+      height: 600px;
+      flex-grow: 0;
+      background-color: #1b1c1e;
+    }
+    .text-box {
+  width: 400px;
+  height: 400px;
+  flex-grow: 1;
+  font-family: RobotoMono;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  color: #adb5bd;
+  background-color: #2f57a8;
+}
+  .text-box-overlay {
+    height: 320px;
+    flex-grow: 1;
+    font-family: RobotoMono;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: #adb5bd;
+}
+.bottom-overlay {
+  width: 400px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 422px 0 0;
+  padding: 16px;
+  background-color: #ff050d;
+}
+.chat-area {
+  height: 48px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 101px;
+  background-color: #0acd4e;
+}
+.send {
+  width: 17.4px;
+  height: 15px;
+  flex-grow: 0;
+  object-fit: contain;
+  background-color: #d4b2a8;
+}
+  </style>
+  <script src="background.js"></script>
+<div class="div">
+<div class="text-box">
+  <span class="text-box">
+    <h1 id="response"></h1>
+  </span>
+</div>
+<div class="bottom-overlay">
+  <form class="chat-area">
+    <label for="name"></label>
+    <input type="text" id="name" name="name" class="chat-area">
+    <button id="chat" type="button" onclick="submitForm()">
+      <img src="img/Vector.png"
+     class="send">
+      <script src="gpt.js"></script>
+    </button>
+  </form>
+</div>
+</div>
+</html>
