@@ -1,24 +1,23 @@
-<html style="background-color: 1b1c1e;">
-<header>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-</header>
-  <script src="background.js"></script>
-<div class="div">
-<div class="text-box">
-  <span class="text-box">
-    <h1 id="response"></h1>
-  </span>
-</div>
-<div class="bottom-overlay">
-  <form class="chat-area">
-    <label for="name"></label>
-    <input type="text" id="name" name="name" class="chat-area">
-    <button id="chat" type="button" onclick="submitForm()">
-      <img src="img/Vector.png"
-     class="send">
-      <script src="gpt.js"></script>
-    </button>
-  </form>
-</div>
-</div>
+<html style="background-color: 1b1c1e">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="chat-box">
+      <p id="response">hello 
+
+      </p>
+    </div>
+    <div class="bottom-overlay">
+      <form class="chat-area">
+        <label for="name"></label>
+        <input type="text" id="name" name="name" class="chat-area" />
+        <button id="chat" type="button" onclick="submitForm()">
+          <img src="img/Vector.png" class="send" />
+          <script src="gpt.js"></script>
+          <script src="background.js"></script>
+        </button>
+      </form>
+    </div>
+  </body>
 </html>

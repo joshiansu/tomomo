@@ -1,19 +1,23 @@
-.div {
-    width: 400px;
-    height: 600px;
-    flex-grow: 0;
-    background-color: #1b1c1e;
-  }
-  .text-box {
+
+.body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #0acd4e;
+  width: 500px;
+}
+
+.chat-box {
+  justify-content: center;
 width: 400px;
-height: 400px;
+height: 600px;
 flex-grow: 1;
 font-family: RobotoMono;
 font-size: 14px;
 line-height: 20px;
 text-align: left;
 color: #adb5bd;
-background-color: #2f57a8;
+background-color: #e1aa2a;
 }
 .text-box-overlay {
   height: 320px;
@@ -22,22 +26,23 @@ background-color: #2f57a8;
   font-size: 14px;
   line-height: 20px;
   text-align: left;
-  color: #adb5bd;
+  color: #0056ac;
 }
 .bottom-overlay {
-width: 400px;
-height: 80px;
+width: auto;
+height: auto;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 12px;
-margin: 422px 0 0;
-padding: 16px;
+margin: 0;
+padding: 0;
 background-color: #ff050d;
 }
 .chat-area {
 height: 48px;
+width: auto;
 flex-grow: 1;
 display: flex;
 flex-direction: row;
@@ -53,4 +58,9 @@ height: 15px;
 flex-grow: 0;
 object-fit: contain;
 background-color: #d4b2a8;
+}
+.response {
+  width: 500px;
+  height: 500px;
+  background-color: aqua;
 }
