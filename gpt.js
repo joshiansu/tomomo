@@ -2,7 +2,7 @@ document.getElementById("chat").addEventListener("click", submitForm);
 function submitForm() {
     var name = document.getElementById("name").value;
     console.log(name)
-    fetch('http://localhost:8000/text', {
+    fetch('https://nqui5y.deta.dev/text', {
         method: "POST",
         body: JSON.stringify({ prompt: name }),
         headers: { 'Content-Type': 'application/json' }
