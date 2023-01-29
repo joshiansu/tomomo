@@ -1,2 +1,0 @@
-# hi
-apple is here
