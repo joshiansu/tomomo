@@ -22,12 +22,13 @@ input:focus {
 .chat-container {
   background-color: #1b1c1e;
   margin: 0px;  
-  padding: 24px;
+  padding: 24px 24px 10px 24px;
   height: 470px;
   width: 100%;  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
 
 }
 .message-box {
@@ -35,7 +36,7 @@ input:focus {
   height: 440px;
   background-color: #1b1c1e;
   align-self: center;
-  color: aqua;
+  color: rgb(236, 35, 236);
 }
 .text-box {
   background-color: #232527;
@@ -89,6 +90,26 @@ input:focus {
   z-index: 2;
   position: absolute;
   
+}
+
+.pills-area {
+  background-color: #1b1c1e;
+  width: 100%;  
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.pill-button {
+  background-color: #b68377;
+  border: none;
+  color: #fffffe;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
 }
 
 /* .chat-box {
