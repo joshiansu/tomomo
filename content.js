@@ -1,22 +1,27 @@
-// const article = document.querySelector("article");
 
-// // `document.querySelector` may return null if the selector doesn't match anything.
-// if (article) {
-//   const text = article.textContent;
-//   const wordMatchRegExp = /[^\s]+/g; // Regular expression
-//   const words = text.matchAll(wordMatchRegExp);
-//   // matchAll returns an iterator, convert to array to get word count
-//   const wordCount = [...words].length;
-//   const readingTime = Math.round(wordCount / 200);
-//   const badge = document.createElement("p");
-//   // Use the same styling as the publish information in an article's header
-//   badge.classList.add("color-secondary-text", "type--caption");
-//   badge.textContent = ` ${readingTime} min read`;
 
-//   // Support for API reference docs
-//   const heading = article.querySelector("h1");
-//   // Support for article docs with date
-//   const date = article.querySelector("time")?.parentNode;
+document.getElementById("chat").addEventListener("click", submitForm);
 
-//   (date ?? heading).insertAdjacentElement("afterend", badge);
-// }
+var wage = document.getElementById("chat");
+wage.addEventListener("keydown", function (e) {
+    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+        submitForm();
+    }
+});
+
+function submitForm() {
+    console.log("SUBMITTED!!")
+    var name = document.getElementById("name").value;
+    console.log("name")
+    fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {
+        method: "POST",
+        body: JSON.stringify({ message: name }),
+        headers: { 'Content-Type': 'application/json' }
+      }).then(response => response.json())
+      .then(data => {
+          console.log(data);
+          console.log(data.choices[0].text)
+          document.getElementById("response").innerHTML = data.choices[0].text;
+     })
+    //document.getElementById("response").innerHTML ="lorem ipsum"
+}
