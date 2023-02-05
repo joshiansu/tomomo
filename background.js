@@ -1,3 +1,34 @@
+
+console.log("inside background js ");
+
+    console.log("hello")
+
+    //receiving a message
+    chrome.runtime.onMessage.addListener(
+        function(request, sender, sendResponse) {
+        console.log('request', request.paraString);
+        fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {
+            method: "POST",
+            body: JSON.stringify({ message: "Summarize "+request.paraString }),
+            headers: { 'Content-Type': 'application/json' }
+          }).then(response => response.json())
+          .then(data => {
+           // data ="Hello World!";
+            console.log('TTEEEXXXTT:: ',data.choices[0].text);
+            sendResponse({data: data.choices[0].text});
+            // document.getElementById("response").innerHTML = data.choices[0].text;
+              
+         })
+
+         
+
+            
+        }
+    );
+
+
+
+
 // // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 // //     chrome.tabs.executeScript(tabs[0].id, {code: "document.body.innerText"}, function(text) {
 // //       console.log(text);
@@ -16,7 +47,7 @@ console.log("BACKGROUND WORKING")
 //         submitForm();
 //     }
 // });
-promptProvider()
+//promptProvider()
 function promptProvider() {
     console.log("SUBMITTED!!")
     // var name = document.getElementById("name").value;

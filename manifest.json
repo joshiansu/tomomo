@@ -16,7 +16,8 @@
     },
     "permissions" : [
       "tabs",
-      "activeTab"
+      "activeTab",
+      "scripting"
     ]
   }
   
