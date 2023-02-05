@@ -26,24 +26,38 @@ function promptProvider() {
         method: "POST",
         body: JSON.stringify({ message: name }),
         headers: { 'Content-Type': 'application/json' }
+      }).then(response =>  {
+        response.text().then(prompt => {
+            console.log("aaaaaaa:", prompt)
+            var array = JSON.parse(prompt);
+            console.log(array)
+            document.getElementById("pill-1").innerHTML = array[0]
+            document.getElementById("pill-2").innerHTML = array[1]
+            document.getElementById("pill-3").innerHTML = array[2]
+        }
+        )
       })
-      .then(data => {
-        //   console.log(data);
-        //   console.log(data.choices[0].text)
-          data = data.text()
-          console.log(data)
-          console.log(typeof(data))
-        //   var array = JSON.parse(data).split();
-        //   console.log(array)
-          document.getElementById("pill-1").innerHTML = "afhakdfhkusagkgkwhg";
-     }
-    )
-    var response = ['apple', 'ball', 'cat']
-    console.log(response)
     console.log("done")
-    //document.getElementById("response").innerHTML ="lorem ipsum"
 }
 
+function promptResponse() {
+    console.log("PROMPT REPONSE!!")
+}
+
+
+
+function reddenPage() {
+    document.body.style.backgroundColor = 'red';
+  }
+  
+  chrome.action.onClicked.addListener((tab) => {
+    if(!tab.url.includes("chrome://")) {
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: reddenPage
+      });
+    }
+  });
 // const request = require('request');
 // // const request = require('request-promise');
 // const cheerio = require('cheerio');
