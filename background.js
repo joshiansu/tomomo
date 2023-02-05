@@ -7,7 +7,7 @@
 // window.onload = function () {
 //     document.getElementById("button").onclick = submitForm();
 // }
-
+console.log("BACKGROUND WORKING")
 // document.getElementById("chat").addEventListener("click", submitForm);
 
 // var wage = document.getElementById("chat");
@@ -16,23 +16,33 @@
 //         submitForm();
 //     }
 // });
-
-// function submitForm() {
-//     console.log("SUBMITTED!!")
-//     var name = document.getElementById("name").value;
-//     console.log("name")
-//     fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {
-//         method: "POST",
-//         body: JSON.stringify({ message: name }),
-//         headers: { 'Content-Type': 'application/json' }
-//       }).then(response => response.json())
-//       .then(data => {
-//           console.log(data);
-//           console.log(data.choices[0].text)
-//           document.getElementById("response").innerHTML = data.choices[0].text;
-//      })
-//     //document.getElementById("response").innerHTML ="lorem ipsum"
-// }
+promptProvider()
+function promptProvider() {
+    console.log("SUBMITTED!!")
+    // var name = document.getElementById("name").value;
+    console.log("name")
+    var name = "PDFs run your world. You know you use PDFs to make your most important work happen. That's why we invented the Portable Document Format (better known by the abbreviation PDF), to present and exchange documents reliably — independent of software, hardware or operating system. The PDF is now an open standard, maintained by the International Organisation for Standardisation (ISO). PDF documents can contain links and buttons, form fields, audio, video and business logic."
+    fetch('https://sngoy3fgtvvyv55gnjeg2voz7u0jxzhz.lambda-url.ap-south-1.on.aws', {
+        method: "POST",
+        body: JSON.stringify({ message: name }),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(data => {
+        //   console.log(data);
+        //   console.log(data.choices[0].text)
+          data = data.text()
+          console.log(data)
+          console.log(typeof(data))
+        //   var array = JSON.parse(data).split();
+        //   console.log(array)
+          document.getElementById("pill-1").innerHTML = "afhakdfhkusagkgkwhg";
+     }
+    )
+    var response = ['apple', 'ball', 'cat']
+    console.log(response)
+    console.log("done")
+    //document.getElementById("response").innerHTML ="lorem ipsum"
+}
 
 // const request = require('request');
 // // const request = require('request-promise');

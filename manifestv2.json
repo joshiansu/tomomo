@@ -1,9 +1,9 @@
 {
     "name": "TEST Extensions",
     "description": "Base Level Extension",
-    "version": "1222.0",
-    "manifest_version": 3,
-    "action": {
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
       "default_popup": "chat.html",
       "default_icon": "img/Vector.png"
     },
@@ -12,11 +12,12 @@
       "js": ["content.js"]
     }],
     "background" : {
-      "service_worker": "background.js"
+      "scripts" : ["background.js"]
     },
     "permissions" : [
       "tabs",
       "activeTab"
-    ]
+    ],
+    "web_accessible_resources" : ["inject-script.js"]
   }
   
