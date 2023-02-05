@@ -11,9 +11,9 @@ function submitForm() {
     console.log("SUBMITTED!!")
     var name = document.getElementById("name").value;
     console.log("name")
-    fetch('https://dbarf8.deta.dev/text', {
+    fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {
         method: "POST",
-        body: JSON.stringify({ prompt: name }),
+        body: JSON.stringify({ message: name }),
         headers: { 'Content-Type': 'application/json' }
       }).then(response => response.json())
       .then(data => {
