@@ -52,7 +52,7 @@ function promptProvider() {
     console.log("SUBMITTED!!")
     // var name = document.getElementById("name").value;
     console.log("name")
-    var name = "PDFs run your world. You know you use PDFs to make your most important work happen. That's why we invented the Portable Document Format (better known by the abbreviation PDF), to present and exchange documents reliably — independent of software, hardware or operating system. The PDF is now an open standard, maintained by the International Organisation for Standardisation (ISO). PDF documents can contain links and buttons, form fields, audio, video and business logic."
+    var name = 'Recently, Google announced it was laying off approximately 6% of its workforce (or 12,000 people). This brings it in line with most of the rest of the tech industry. The reason given by a publicly contrite CEO was that they’d overhired in the boom following the COVID pandemic and that now they had to address it but they were oh-so-sorry and took full responsibility. Like many others my first reaction to this rationale was “bullshit”. I imagine the same is true for the people at Meta, Amazon, Microsoft et al going through this. I spent 10 years at Google so I have some views on how these things come about and they don’t reflect well on the people running the company. Before getting into that it’s worth noting that all publicly listed companies operate under a fiduciary duty to act for the benefit of their shareholders. This has been enshrined since the (in)famous case of Dodge vs Ford Motor Company (1919). The backstory there was that Henry Ford wanted to reduce payments to shareholders on the basis of being able to offer cheaper cars to his customers and better wages to his staff. At the time Ford said. My ambition is to employ still more men, to spread the benefits of this industrial system to the greatest possible number, to help them build up their lives and their homes. To do this we are putting the greatest share of our profits back in the business. The Dodge brothers owned 10% of Ford and opposed this and took Ford to court because they wanted the payments to be able to start their own company. They won and Ford was not allowed to lower prices or raise salaries at the company. It’s worth understanding that if you have a sufficiently vocal group of shareholders with the resources to take you to court then you have to be able to show you are acting in their best interests. Shareholders have primacy in terms of a company’s priorities. This almost enshrines seeking short term profit over longer term thinking by giving activist investors a stick to threaten you with.'
     fetch('https://sngoy3fgtvvyv55gnjeg2voz7u0jxzhz.lambda-url.ap-south-1.on.aws', {
         method: "POST",
         body: JSON.stringify({ message: name }),
@@ -62,9 +62,10 @@ function promptProvider() {
             console.log("aaaaaaa:", prompt)
             var array = JSON.parse(prompt);
             console.log(array)
-            document.getElementById("pill-1").innerHTML = array[0]
-            document.getElementById("pill-2").innerHTML = array[1]
-            document.getElementById("pill-3").innerHTML = array[2]
+            document.getElementById("q1").innerHTML = array[0]
+            document.getElementById("q2").innerHTML = array[1]
+            document.getElementById("q3").innerHTML = array[2]
+            // document.getElementById("q-button").style.display = 'block'
         }
         )
       })
@@ -75,20 +76,6 @@ function promptResponse() {
     console.log("PROMPT REPONSE!!")
 }
 
-
-
-function reddenPage() {
-    document.body.style.backgroundColor = 'red';
-  }
-  
-  chrome.action.onClicked.addListener((tab) => {
-    if(!tab.url.includes("chrome://")) {
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        function: reddenPage
-      });
-    }
-  });
 // const request = require('request');
 // // const request = require('request-promise');
 // const cheerio = require('cheerio');
