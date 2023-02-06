@@ -1,5 +1,11 @@
 console.log("inside gpt js ");
-
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    
+    if(!message.text)
+    console.log('in con js, in listener', message);
+    document.getElementById("response").innerHTML = message.text;
+    
+  })
 
 document.getElementById("chat").addEventListener("click", submitForm);
 
@@ -9,6 +15,7 @@ wage.addEventListener("keydown", function (e) {
         submitForm();
     }
 });
+
 
 function submitForm() {
     console.log("SUBMITTED!!")

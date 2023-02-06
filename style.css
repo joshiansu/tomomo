@@ -111,6 +111,11 @@ input:focus {
   cursor: pointer;
   border-radius: 16px;
 }
+.q-button {
+  background-color: blueviolet;
+  height: 20px;
+  width: 20px;
+}
 
 /* .chat-box {
   justify-content: center;

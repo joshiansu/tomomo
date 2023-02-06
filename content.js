@@ -1,20 +1,25 @@
 console.log("inside content js ");
 
-console.log("inside content js ");
-
 let paraString = '';
 const pTotal = document.getElementsByTagName('p').length;
 for(let i= 0; i<pTotal; i++){
     paraString = paraString.concat(document.getElementsByTagName('p')[i].innerHTML.replace(/<\/?[^>]+(>|$)/g, "")," ");
 }
 paraString =document.getElementsByTagName('p')[0].innerHTML;
+console.log('funnn::', paraString);
 
-
-(async () => {
-    const response = await chrome.runtime.sendMessage({paraString: paraString});
+    chrome.runtime.sendMessage({paraString: paraString}, (response) => {
+     
+    });
+    
+    // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    //   console.log('in con js, in listener', message);
+    //   document.getElementById("response").innerHTML = message;
+      
+    // })
     // do something with response here, not outside the function
   //  console.log(response);
-  })();
+
 
 // document.getElementById("chat").addEventListener("click", submitForm);
 

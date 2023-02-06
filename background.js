@@ -5,8 +5,11 @@ console.log("inside background js ");
 
     //receiving a message
     chrome.runtime.onMessage.addListener(
-        function(request, sender, sendResponse) {
+        
+        (request, sender, sendResponse) => {
+            if(!request.paraString)
         console.log('request', request.paraString);
+       
         fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {
             method: "POST",
             body: JSON.stringify({ message: "Summarize "+request.paraString }),
@@ -14,16 +17,20 @@ console.log("inside background js ");
           }).then(response => response.json())
           .then(data => {
            // data ="Hello World!";
-            console.log('TTEEEXXXTT:: ',data.choices[0].text);
-            sendResponse({data: data.choices[0].text});
+            const text= data.choices[0].text;
+            chrome.tabs.query({active:true,currentWindow:true}, (tabs) => {
+                let activeTab = tabs[0];
+                console.log('tabs:', activeTab);
+                chrome.tabs.sendMessage(activeTab.id, {text: text});
+            });
+          
+            
             // document.getElementById("response").innerHTML = data.choices[0].text;
               
-         })
-
-         
-
-            
+         }) 
         }
+
+
     );
 
 
