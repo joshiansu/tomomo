@@ -1,5 +1,7 @@
 console.log("inside content js ");
 
+console.log("inside content js ");
+
 let paraString = '';
 const pTotal = document.getElementsByTagName('p').length;
 for(let i= 0; i<pTotal; i++){
@@ -14,28 +16,6 @@ paraString =document.getElementsByTagName('p')[0].innerHTML;
   //  console.log(response);
   })();
 
-
-
-
-
-// chrome.runtime.onMessage.addListener(function(request, sender) {
-//     if (request.action == "getSource") {
-//         this.pageSource = request.source;
-//         var title = this.pageSource.match(/<title[^>]*>([^<]+)<\/title>/)[1];
-//         alert(title)
-//     }
-// });
-
-// chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-//     console.log('tabs:', tabs);
-//     chrome.scripting.executeScript({
-//         target: { tabId: tabs[0].id },
-//         files : [ "gpt.js" ],
-//     }
-//     );
-// });
-
-// // document.getElementById("pill-1").style.backgroundColor = "orange";
 // document.getElementById("chat").addEventListener("click", submitForm);
 
 // var wage = document.getElementById("chat");
@@ -44,6 +24,25 @@ paraString =document.getElementsByTagName('p')[0].innerHTML;
 //         submitForm();
 //     }
 // });
+
+
+// const preloader = document.querySelector('.preloader');
+// const fadeEffect = setInterval(() => {
+//     // if we don't set opacity 1 in CSS, then
+//     // it will be equaled to "" -- that's why
+//     // we check it, and if so, set opacity to 1
+//     if (!preloader.style.opacity) {
+//       preloader.style.opacity = 1;
+//     }
+//     if (preloader.style.opacity > 0) {
+//       preloader.style.opacity -= 0.1;
+//     } else {
+//         preloader.style.display = "none";
+//       clearInterval(fadeEffect);
+//     }
+//   }, 1000);
+
+//   document.getElementById("chat").addEventListener('load', fadeEffect);
 
 // function submitForm() {
 //     console.log("SUBMITTED!!")
@@ -61,13 +60,14 @@ paraString =document.getElementsByTagName('p')[0].innerHTML;
 //      })
 //     //document.getElementById("response").innerHTML ="lorem ipsum"
 // }
+// paraString =document.getElementsByTagName('p')[0].innerHTML;
 
-// document.getElementById("pill-1").addEventListener("click", pill1Response);
+// document.getElementById("q1").addEventListener("click", pill1Response);
 
 
 // function pill1Response() {
 //     // console.log("SUBMITTED!!")
-//     var content = "PDFs run your world. You know you use PDFs to make your most important work happen. Thats why we invented the Portable Document Format (better known by the abbreviation PDF), to present and exchange documents reliably — independent of software, hardware or operating system. The PDF is now an open standard, maintained by the International Organisation for Standardisation (ISO). PDF documents can contain links and buttons, form fields, audio, video and business logic."
+//     var content = 'Recently, Google announced it was laying off approximately 6% of its workforce (or 12,000 people). This brings it in line with most of the rest of the tech industry. The reason given by a publicly contrite CEO was that they’d overhired in the boom following the COVID pandemic and that now they had to address it but they were oh-so-sorry and took full responsibility. Like many others my first reaction to this rationale was “bullshit”. '
 //     // var name = document.getElementById("name").value;
 //     console.log(content)
 //     var name = "Summarise " + content;

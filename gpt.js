@@ -27,7 +27,7 @@ function submitForm() {
 
 
 
-document.getElementById("pill-1").addEventListener("click", pill1Response);
+document.getElementById("q1").addEventListener("click", pill1Response);
 
 
 function pill1Response() {
