@@ -34,17 +34,19 @@ function submitForm() {
 
 
 
+
+
 document.getElementById("q1").addEventListener("click", pill1Response);
 
 
 function pill1Response() {
     // console.log("SUBMITTED!!")
-    var content = "PDFs run your world. You know you use PDFs to make your most important work happen. Thats why we invented the Portable Document Format (better known by the abbreviation PDF), to present and exchange documents reliably — independent of software, hardware or operating system. The PDF is now an open standard, maintained by the International Organisation for Standardisation (ISO). PDF documents can contain links and buttons, form fields, audio, video and business logic."
-    // var name = document.getElementById("name").value;
-    console.log(content)
-    var name = "Summarise " + content;
+    // var content = "PDFs run your world. You know you use PDFs to make your most important work happen. Thats why we invented the Portable Document Format (better known by the abbreviation PDF), to present and exchange documents reliably — independent of software, hardware or operating system. The PDF is now an open standard, maintained by the International Organisation for Standardisation (ISO). PDF documents can contain links and buttons, form fields, audio, video and business logic."
+    var name = document.getElementById("q1").innerHTML;
+    // console.log(content)
+    // var name = "Summarise " + content;
     console.log(name)
-    console.log(content)
+    // console.log(content)
 
     console.log("name")
     fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {

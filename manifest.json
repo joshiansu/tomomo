@@ -1,11 +1,11 @@
 {
-    "name": "TEST Extensions",
-    "description": "Base Level Extension",
-    "version": "1222.0",
+    "name": "TOMOMO GPT",
+    "description": "Effortlessly Summarize, Simplify and Stay Informed with TOMOMO.",
+    "version": "0.0.1",
     "manifest_version": 3,
     "action": {
       "default_popup": "chat.html",
-      "default_icon": "img/Vector.png"
+      "default_icon": "img/LOGO.png"
     },
     "content_scripts": [{
       "matches": ["<all_urls>"],
@@ -13,11 +13,6 @@
     }],
     "background" : {
       "service_worker": "background.js"
-    },
-    "permissions" : [
-      "tabs",
-      "activeTab",
-      "scripting"
-    ]
+    }
   }
   

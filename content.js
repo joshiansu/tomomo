@@ -7,19 +7,40 @@ for(let i= 0; i<pTotal; i++){
 }
 paraString =document.getElementsByTagName('p')[0].innerHTML;
 console.log('funnn::', paraString);
-
-    chrome.runtime.sendMessage({paraString: paraString}, (response) => {
-     
-    });
-    
+const n = 0;
+// sendMessageToBackground(paraString, n)
+handleMessage(paraString)
+// Sending a message
+    // chrome.runtime.sendMessage({paraString: paraString}, (response) => {
+    // });
     // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     //   console.log('in con js, in listener', message);
     //   document.getElementById("response").innerHTML = message;
-      
     // })
     // do something with response here, not outside the function
   //  console.log(response);
+  async function sendMessageToBackground(paraString, n) {
+    try {
+        let stopLoop = false;
+        while (!stopLoop) {
+            // sendMessageToBackground(paraString);
+            await handleMessage(paraString);
+            n++;
+        }
+        if (n==1) {
+            stopLoop = true
+        }
+        console.log(n)
+    } catch (error) {
+      console.error(error);
+    }
+    return n;
+  }
 
+  async function handleMessage(paraString) {
+    chrome.runtime.sendMessage({paraString: paraString}, (response) => {
+    });
+  }
 
 // document.getElementById("chat").addEventListener("click", submitForm);
 
@@ -72,17 +93,17 @@ console.log('funnn::', paraString);
 
 // function pill1Response() {
 //     // console.log("SUBMITTED!!")
-//     var content = 'Recently, Google announced it was laying off approximately 6% of its workforce (or 12,000 people). This brings it in line with most of the rest of the tech industry. The reason given by a publicly contrite CEO was that they’d overhired in the boom following the COVID pandemic and that now they had to address it but they were oh-so-sorry and took full responsibility. Like many others my first reaction to this rationale was “bullshit”. '
+//     // var content = 'Recently, Google announced it was laying off approximately 6% of its workforce (or 12,000 people). This brings it in line with most of the rest of the tech industry. The reason given by a publicly contrite CEO was that they’d overhired in the boom following the COVID pandemic and that now they had to address it but they were oh-so-sorry and took full responsibility. Like many others my first reaction to this rationale was “bullshit”. '
 //     // var name = document.getElementById("name").value;
-//     console.log(content)
-//     var name = "Summarise " + content;
-//     console.log(name)
-//     console.log(content)
+//     console.log(paraString)
+//     var req = "Summarise " + paraString;
+//     console.log(req)
+//     // console.log(content)
 
-//     console.log("name")
+//     console.log("req")
 //     fetch('https://grkp5f3qtjwlnkrhjus3c3pc7u0ttuef.lambda-url.ap-south-1.on.aws', {
 //         method: "POST",
-//         body: JSON.stringify({ message: name }),
+//         body: JSON.stringify({ message: req }),
 //         headers: { 'Content-Type': 'application/json' }
 //       }).then(response => response.json())
 //       .then(data => {

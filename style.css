@@ -100,16 +100,28 @@ input:focus {
   justify-content: space-evenly;
 }
 .pill-button {
-  background-color: #b68377;
+  background-color: #232527;
   border: none;
   color: #fffffe;
-  padding: 10px 20px;
-  text-align: center;
+  padding: 10px 16px;
+  text-align: left;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 8px;
+}
+.pill-button:hover {
+  background-color: #2b2e31;
+  border: none;
+  color: #cf966e;
+  padding: 10px 16px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
 }
 .q-button {
   background-color: blueviolet;
